@@ -15,16 +15,16 @@ class IterExtraTestCase(unittest.TestCase):
         func2 = mock.MagicMock()
 
         #  single function
-        result = chaincall([func1], "arg1", "arg2", kwarg1="kwarg1",
-                           kwarg2="kwarg2")
+        result = chaincall(func1)("arg1", "arg2", kwarg1="kwarg1",
+                                  kwarg2="kwarg2")
         func1.assert_called_once_with("arg1", "arg2", kwarg1="kwarg1",
                                       kwarg2="kwarg2")
         self.assertEquals(result, func1.return_value)
         func1.reset_mock()
 
         # two simple values
-        result = chaincall([func1, func2], "arg1", "arg2", kwarg1="kwarg1",
-                           kwarg2="kwarg2")
+        result = chaincall(func1, func2)("arg1", "arg2", kwarg1="kwarg1",
+                                         kwarg2="kwarg2")
         func1.assert_called_once_with("arg1", "arg2", kwarg1="kwarg1",
                                       kwarg2="kwarg2")
         func2.assert_called_once_with(func1.return_value)
