@@ -22,7 +22,7 @@ assert not to_bool("0")
 pick - helper function to make fetching member of list of objects a little more
        clear
 
-```
+```python
 import iterextra
 
 lst = [complex(1.0, 2.0), complex(1.5, 2.5)]
