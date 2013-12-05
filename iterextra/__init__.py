@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from functools import partial
 
+__all__ = ['chaincall']
+
 
 def _chain_calls(callables, *args, **kwargs):
     result = None
