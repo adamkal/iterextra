@@ -39,6 +39,6 @@ def pick(member):
 
     def picker(obj):
         return getattr(obj, member)
-    picker.__doc__ = "Picks member '{}' from ``obj``".format(member)
-    picker.__name__ = "{}_picker".format(member)
+    picker.__doc__ = "Picks member '{0}' from ``obj``".format(member)
+    picker.__name__ = "{0}_picker".format(member)
     return picker
