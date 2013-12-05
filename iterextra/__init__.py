@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from functools import partial
 
-__all__ = ['chaincall']
+__all__ = ["chaincall", "pick"]
 
 
 def _chain_calls(callables, *args, **kwargs):
@@ -26,3 +26,19 @@ def chaincall(*args):
     """
 
     return partial(_chain_calls, args)
+
+def pick(member):
+    """Picks ``member`` from object.
+
+    It is intended to be used with ``map``
+
+    >>> lst = [complex(1.0, 2.0), complex(1.5, 2.5)]
+    >>> list(map(pick('imag'), lst))
+    [2.0, 2.5]
+    """
+
+    def picker(obj):
+        return getattr(obj, member)
+    picker.__doc__ = "Picks member '{}' from ``obj``".format(member)
+    picker.__name__ = "{}_picker".format(member)
+    return picker
