@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/adamkal/iterextra.png)](https://travis-ci.org/adamkal/iterextra)
+
 iterextra
 =========
 
