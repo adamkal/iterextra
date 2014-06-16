@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/adamkal/iterextra.png)](https://travis-ci.org/adamkal/iterextra)
-
+[ ![Codeship Status for adamkal/iterextra](https://www.codeship.io/projects/8875e420-d76e-0131-ba27-52e8c0de9e09/status)](https://www.codeship.io/projects/23879)
 iterextra
 =========
 
